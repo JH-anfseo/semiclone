@@ -1,14 +1,8 @@
 import React from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Router from "./shared/Router";
 
 const App = () => {
-  return (
-    <>
-      <Header />
-      <Main />
-    </>
-  );
+  return <Router />;
 };
 
 export default App;
