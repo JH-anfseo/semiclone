@@ -1,0 +1,24 @@
+.showModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.hideModal {
+  display: none;
+}
+.gry-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.modal {
+  position: fixed;
+  left: 25%;
+  top: 30%;
+  width: 50%;
+  height: 40%;
+  background: white;
+}

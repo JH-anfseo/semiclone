@@ -2,9 +2,9 @@ import React from "react";
 // 1. react-router-dom을 사용하기 위해서 아래 API들을 import 합니다.
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Main from "../components/Main";
-import Header from "../components/Header";
-import TodoDetail from "../components/TodoDetail";
+import Main from "../components/Main/Main";
+import Header from "../components/Header/Header";
+import TodoDetail from "../components/Todo";
 
 // 2. Router 라는 함수를 만들고 아래와 같이 작성합니다.
 //BrowserRouter를 Router로 감싸는 이유는,

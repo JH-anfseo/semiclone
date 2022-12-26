@@ -1,0 +1,16 @@
+{
+  "todoList": [
+    {
+      "id": "nanoid",
+      "todoListTitle": "string1",
+      "user": "string1",
+      "todoListPw": "123"
+    },
+    {
+      "id": "nanoid",
+      "todoListTitle": "string2",
+      "user": "string2",
+      "todoListPw": "234"
+    }
+  ]
+}
