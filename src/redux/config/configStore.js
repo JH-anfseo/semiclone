@@ -1,10 +1,10 @@
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 import ModalList from "../modules/ModalList";
-import todoUser from "../modules/todoUser";
+//import todoUser from "../modules/todoUser";
 // modules 모음
 const reducer = combineReducers({
   ModalList,
-  todoUser,
+  //todoUser,
 });
 const store = createStore(reducer);
 

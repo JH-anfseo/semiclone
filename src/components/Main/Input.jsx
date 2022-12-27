@@ -1,32 +1,35 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+import { customAlphabet } from "nanoid";
 import { addTodo } from "../../redux/modules/todoUser";
+const nanoid = customAlphabet("01234567899abcedf", 6);
 
 function Input() {
-  const [title, setTitle] = useState("");
+  const [todoListTitle, setTodoListTitle] = useState("");
   const [user, setUser] = useState("");
   const [todoListPw, setTodoListPw] = useState("");
   const [todoListPwConf, setTodoListPwConf] = useState("");
   const [type, setType] = useState("password");
-  const dispatch = useDispatch();
 
-  const handleSubmit = (event) => {
+  const passwordRegEx = /^[A-Za-z0-9]{8,20}$/;
+
+  const handleSubmit = (event, handlegettodo) => {
     event.preventDefault();
     const newTodo = {
-      id: uuidv4(),
-      title,
+      id: nanoid(),
+      todoListTitle,
       user,
       editing: false,
       todoListPw,
       todoListPwConf,
     };
     if (todoListPw === todoListPwConf) {
-      dispatch(addTodo(newTodo));
-      setTitle("");
+      addTodo(newTodo).then(() => handlegettodo());
+      setTodoListTitle("");
       setUser("");
       setTodoListPw("");
       setTodoListPwConf("");
+    } else if (todoListPw.match(passwordRegEx) === null) {
+      alert("비밀번호 형식을 확인해주세요");
     } else {
       alert("비밀번호틀림");
     }
@@ -36,7 +39,7 @@ function Input() {
   };
 
   const titleInput = (event) => {
-    setTitle(event.target.value);
+    setTodoListTitle(event.target.value);
   };
   const userInput = (event) => {
     setUser(event.target.value);
@@ -52,7 +55,7 @@ function Input() {
       <form onSubmit={handleSubmit}>
         <input
           onChange={titleInput}
-          value={title}
+          value={todoListTitle}
           type="text"
           placeholder="누구의 투두리스트"
         />
