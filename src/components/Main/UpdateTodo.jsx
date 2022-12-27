@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { updatedTodo, editTodo } from "../../redux/modules/todoUser";
 
-function UpdateTodo({ data }, handlegettodo) {
+function UpdateTodo({ data, handlegettodo }) {
   const [newTitle, setnewTitle] = useState(data.todoListTitle);
   const handleUpdate = (event, editing) => {
     event.preventDefault();
